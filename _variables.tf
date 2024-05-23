@@ -16,3 +16,9 @@ variable "account_ids" {
   default     = []
   description = "List of accounts to allow publishing to SNS"
 }
+
+variable "list_subscription_roles" {
+  type = list(string)
+  default = []
+  description = "Roles to allow SNS:ListSubscriptionsByTopic"
+}
