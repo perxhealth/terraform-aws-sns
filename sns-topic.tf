@@ -66,4 +66,23 @@ data "aws_iam_policy_document" "sns" {
 
     sid = "allow-publish-clients-stmt"
   }
+
+  statement {
+    actions = [
+      "SNS:ListSubscriptionsByTopic"
+    ]
+
+    effect = "Allow"
+
+    principals {
+      type        = "AWS"
+      identifiers = var.list_subscription_roles
+    }
+
+    resources = [
+      aws_sns_topic.default.arn,
+    ]
+
+    sid = "allow-drata-to-monitor"
+  }
 }
