@@ -28,12 +28,6 @@ variable "account_ids" {
   description = "List of accounts to allow publishing to SNS (optional - only when SNS topic is created)"
 }
 
-variable "sns_kms_encryption" {
-  type        = bool
-  default     = false
-  description = "Enabled KMS CMK encryption at rest for SNS Topic"
-}
-
 variable "list_subscription_roles" {
   type = list(string)
   default = []
